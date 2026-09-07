@@ -20,6 +20,13 @@ options = HandLandmarkerOptions(
 #Abrindo a primeira câmera disponivel no pc
 camera = cv2.VideoCapture(0)
 
+        
+def distancia(p1, p2):
+  return math.sqrt(
+    (p1.x - p2.x) ** 2 +
+    (p1.y - p2.y) ** 2
+  )
+
 #Criando o landmarker
 with HandLandmarker.create_from_options(options) as landmarker:
 
@@ -50,18 +57,24 @@ with HandLandmarker.create_from_options(options) as landmarker:
     #PErcorrendo os pontos de cada uma das mãos
     for hand in result.hand_landmarks:
       
-      fist = hand[0]
+      wrist = hand[0]
       thumb = hand[4]
       index_f = hand[8]
       middle = hand[12]
       ring = hand[16]
       little = hand[20]
+
+      # Distância que você quer analisar
+      dist_index = distancia(index_f, wrist)
+
+      # Tamanho de referência da mão
+      palm_width = distancia(index_f, little)
+
+      # Distância normalizada pelo tamanho da mão
+      dist_relativa = dist_index / palm_width
+
+      print(dist_relativa)
       
-      distancia = math.sqrt(
-        (index_f.x - fist.x) ** 2 + (index_f.y - fist.y) ** 2
-      )
-      
-      print(distancia)
       
       for index,point in enumerate(hand):
         #Convertendo as coordenadas devolvidas pelo mediapipe em pixels
