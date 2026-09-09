@@ -27,7 +27,7 @@ LABELS = {
     ord("9"): "I",
     ord("w"): "J",
     ord("e"): "K",
-    ord("r"): "L",
+    ord("l"): "L",
     ord("t"): "M",
     ord("y"): "N",
     ord("u"): "O",
