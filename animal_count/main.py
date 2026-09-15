@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("../models/counter/yolo26n.pt")
+model = YOLO("../models/counter/yolo26s.pt")
 
 video = cv2.VideoCapture("videos/lvl_1.mp4")
 
@@ -16,7 +16,8 @@ while True:
     results = model.predict(
         frame,
         classes=[18],
-        conf=0.40,
+        conf=0.10,
+        imgsz=960,
         verbose=False
     )
 
