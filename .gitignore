@@ -1,6 +1,7 @@
 .venv
 .env
 .csv
+.jpg
 .worktrees/
 # Byte-compiled / optimized / DLL files
 __pycache__/
