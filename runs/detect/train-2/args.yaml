@@ -2,11 +2,11 @@ task: detect
 mode: train
 model: ../models/counter/yolo26s.pt
 data: ../dataset_raw/My First Project.yolo26/data.yaml
-epochs: 1
+epochs: 20
 time: null
-patience: 15
+patience: 8
 batch: 16
-imgsz: 960
+imgsz: 640
 save: true
 save_period: -1
 cache: false

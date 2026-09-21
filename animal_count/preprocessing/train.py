@@ -7,7 +7,7 @@ model = YOLO(
 
 model.train(
     data="../dataset_raw/My First Project.yolo26/data.yaml",
-    epochs=1,
-    imgsz=960,
-    patience=15
+    epochs=20,#Quantidade de vezes que ele vai olhar o dataset
+    imgsz=640,
+    patience=8#Caso o modelo não melhore em x vezes ele para de treinar para não dar overfitting
 )
