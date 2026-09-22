@@ -1,7 +1,7 @@
 .venv
 .env
 .csv
-.jpg
+dataset_raw/
 .worktrees/
 # Byte-compiled / optimized / DLL files
 __pycache__/
