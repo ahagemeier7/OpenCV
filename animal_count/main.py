@@ -1,9 +1,9 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("../models/counter/yolo26s.pt")
+model = YOLO("../runs/detect/train-2/weights/best.pt") #Modelo treinado com base nas imagens 
 
-video = cv2.VideoCapture("videos/lvl_1.mp4")
+video = cv2.VideoCapture("videos/visao_superior.mp4")
 
 
 
@@ -15,8 +15,8 @@ while True:
 
     results = model.predict(
         frame,
-        classes=[18],
-        conf=0.10,
+        classes=[0],#Classe 0 - sheep definida no roboflow
+        conf=0.50,
         imgsz=960,
         verbose=False
     )

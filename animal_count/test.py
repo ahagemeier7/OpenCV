@@ -2,7 +2,7 @@ import cv2
 from ultralytics import YOLO
 
 
-CAMINHO_MODELO = "../models/counter/yolo26n.pt"
+CAMINHO_MODELO = "models/counter/yolo26s.pt"
 CAMINHO_VIDEO = "videos/lvl_1.mp4"
 
 # Escolha um frame onde ele esteja errando bastante
